@@ -25,9 +25,31 @@
     }
     .hotspot {
       position: absolute;
-      border: 2px solid #0074d9;
-      background-color: rgba(0, 116, 217, 0.2);
       cursor: pointer;
+    }
+    .photonics {
+      border: 2px solid orange;
+      background-color: rgba(255, 165, 0, 0.2);
+    }
+    .algorithms {
+      border: 2px solid red;
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+    .applications {
+      border: 2px solid pink;
+      background-color: rgba(255, 192, 203, 0.3);
+    }
+    .fabrication {
+      border: 2px solid blue;
+      background-color: rgba(0, 0, 255, 0.2);
+    }
+    .software {
+      border: 2px solid purple;
+      background-color: rgba(128, 0, 128, 0.2);
+    }
+    .lifesciences {
+      border: 2px solid green;
+      background-color: rgba(0, 128, 0, 0.2);
     }
     .tooltip {
       position: absolute;
@@ -44,11 +66,24 @@
   <div id="map-container">
     <img src="Sheffield Quantum Map v0.2.svg" style="width:100%; height:100%; position:absolute; z-index: 0;" />
 
-    <!-- Hotspots -->
-    <div class="hotspot" style="top: 41%; left: 49%; width: 4%; height: 8%;" data-tooltip="<b>Hicks Building</b><br>Physics Labs, Quantum Photonics, Quantum Computing Algorithm, Quantum Theory, Biophysics, Quantum Information, Quantum Machine Learning, Quantum Error Correction"></div>
-    <div class="hotspot" style="top: 12%; left: 81%; width: 4%; height: 8%;" data-tooltip="<b>Nanoscience and Technology Centre</b><br>National Epitaxy Facilities (NEF): Semiconductor Growth, III-V Nanostructures, Quantum Dots, Photonic Circuits"></div>
-    <div class="hotspot" style="top: 44%; left: 79%; width: 3%; height: 5%;" data-tooltip="<b>Mapping Building</b><br>Engineering, Machine Learning, Quantum Use-Cases"></div>
-    <div class="hotspot" style="top: 45%; left: 76%; width: 3%; height: 5%;" data-tooltip="<b>Regent Court</b><br>Quantum Optimization, Algorithms, Software, Circuit Compilation"></div>
+    <!-- Hicks Building Sub-areas -->
+    <div class="hotspot photonics" style="top: 41%; left: 47%; width: 3%; height: 6%;" data-tooltip="<b>Quantum Photonics</b><br>Quantum light sources, detectors, and integrated photonic circuits."></div>
+    <div class="hotspot algorithms" style="top: 43%; left: 49%; width: 3%; height: 6%;" data-tooltip="<b>Quantum Algorithms and Theory</b><br>Quantum error correction, quantum computing theory."></div>
+    <div class="hotspot fabrication" style="top: 45%; left: 47%; width: 3%; height: 6%;" data-tooltip="<b>2D Materials & Fabrication</b><br>Nanofabrication, materials for quantum systems."></div>
+    <div class="hotspot lifesciences" style="top: 47%; left: 49%; width: 3%; height: 6%;" data-tooltip="<b>Quantum Life Sciences</b><br>Biophysics and quantum sensing in biology."></div>
+
+    <!-- Nanoscience Centre -->
+    <div class="hotspot fabrication" style="top: 12%; left: 81%; width: 4%; height: 8%;" data-tooltip="<b>Nanoscience and Technology Centre</b><br>Semiconductor Growth, III-V Nanostructures, Quantum Dots, Photonic Circuits."></div>
+
+    <!-- Mapping Building -->
+    <div class="hotspot applications" style="top: 44%; left: 79%; width: 3%; height: 5%;" data-tooltip="<b>Quantum Applications in Engineering</b><br>Numerical modelling and engineering solutions using quantum tools."></div>
+    <div class="hotspot software" style="top: 44%; left: 82%; width: 3%; height: 5%;" data-tooltip="<b>AI and Machine Learning</b><br>Quantum-inspired models, ML frameworks, and hardware-aware AI."></div>
+
+    <!-- Regent Court -->
+    <div class="hotspot software" style="top: 45%; left: 76%; width: 3%; height: 5%;" data-tooltip="<b>Quantum Software and AI</b><br>Quantum circuit compilation, software optimization, ML algorithms."></div>
+
+    <!-- Medical School -->
+    <div class="hotspot lifesciences" style="top: 85%; left: 10%; width: 4%; height: 6%;" data-tooltip="<b>Quantum Life Sciences</b><br>Applications of quantum sensing in medical diagnostics and imaging."></div>
 
     <div id="tooltip" class="tooltip"></div>
   </div>
