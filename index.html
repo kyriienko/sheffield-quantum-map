@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University of Sheffield Quantum Map</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #map-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: #fff;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    .hotspot {
+      position: absolute;
+      border: 2px solid #0074d9;
+      background-color: rgba(0, 116, 217, 0.2);
+      cursor: pointer;
+    }
+    .tooltip {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      display: none;
+      z-index: 10;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container">
+    <img src="Sheffield Quantum Map v0.2.svg" style="width:100%; height:100%; position:absolute; z-index: 0;" />
+
+    <!-- Hotspots -->
+    <div class="hotspot" style="top: 45%; left: 45%; width: 8%; height: 10%;" data-tooltip="<b>Hicks Building</b><br>Physics Labs, Quantum Computing, Quantum Information, Quantum Machine Learning"></div>
+    <div class="hotspot" style="top: 10%; left: 80%; width: 8%; height: 10%;" data-tooltip="<b>Nanoscience and Technology Centre</b><br>Semiconductor Growth, III-V Nanostructures, Quantum Dots, Photonic Circuits"></div>
+    <div class="hotspot" style="top: 50%; left: 90%; width: 8%; height: 10%;" data-tooltip="<b>Mapping Building</b><br>Engineering, Machine Learning, Quantum Use-Cases"></div>
+    <div class="hotspot" style="top: 55%; left: 85%; width: 8%; height: 10%;" data-tooltip="<b>Regent Court</b><br>Quantum Algorithms, Software, Circuit Compilation"></div>
+
+    <div id="tooltip" class="tooltip"></div>
+  </div>
+
+  <script>
+    const hotspots = document.querySelectorAll('.hotspot');
+    const tooltip = document.getElementById('tooltip');
+
+    hotspots.forEach(hs => {
+      hs.addEventListener('mouseenter', (e) => {
+        tooltip.innerHTML = hs.dataset.tooltip;
+        tooltip.style.display = 'block';
+        tooltip.style.left = e.pageX + 15 + 'px';
+        tooltip.style.top = e.pageY + 'px';
+      });
+
+      hs.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
